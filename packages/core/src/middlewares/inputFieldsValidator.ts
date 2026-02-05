@@ -31,6 +31,9 @@ const validators = new WeakMap<
   Validator | null
 >()
 
+/**
+ * Middleware that validates input fields using GraphQL field validators.
+ */
 export const inputFieldsValidator: Middleware = async ({
   parseInput,
   next,
