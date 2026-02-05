@@ -9,6 +9,7 @@
     "noEmit": true,
     "paths": {
       "@gqloom/core/context": ["./packages/core/src/context/index.ts"],
+      "@gqloom/core/middlewares": ["./packages/core/src/middlewares/index.ts"],
       "@gqloom/*": ["./packages/*/src/index.ts"]
     }
   }

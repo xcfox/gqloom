@@ -33,6 +33,20 @@
         "types": "./dist/context.d.cts",
         "default": "./dist/context.cjs"
       }
+    },
+    "./middlewares": {
+      "source": {
+        "types": "./src/middlewares/index.ts",
+        "default": "./src/middlewares/index.ts"
+      },
+      "import": {
+        "types": "./dist/middlewares.d.ts",
+        "default": "./dist/middlewares.js"
+      },
+      "require": {
+        "types": "./dist/middlewares.d.cts",
+        "default": "./dist/middlewares.cjs"
+      }
     }
   },
   "scripts": {
