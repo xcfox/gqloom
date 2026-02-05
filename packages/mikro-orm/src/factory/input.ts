@@ -541,6 +541,9 @@ export class MikroInputFactory<TEntity extends object> {
             return {
               type: finalType,
               description: property.comment,
+              extensions: {
+                "~standard.validate": customSilk?.["~standard"].validate,
+              },
             } as GraphQLFieldConfig<any, any>
           }),
       })
@@ -593,6 +596,9 @@ export class MikroInputFactory<TEntity extends object> {
             return {
               type: finalType,
               description: property.comment,
+              extensions: {
+                "~standard.validate": customSilk?.["~standard"].validate,
+              },
             } as GraphQLFieldConfig<any, any>
           }),
       })
