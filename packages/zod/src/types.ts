@@ -1,4 +1,4 @@
-import type { SYMBOLS, WeaverConfig } from "@gqloom/core"
+import type { GraphQLSilk, SYMBOLS, WeaverConfig } from "@gqloom/core"
 import type {
   GraphQLEnumTypeConfig,
   GraphQLEnumValueConfig,
@@ -8,15 +8,8 @@ import type {
   GraphQLOutputType,
   GraphQLUnionTypeConfig,
 } from "graphql"
-import type { $ZodObject, $ZodType } from "zod/v4/core"
+import type { $ZodType } from "zod/v4/core"
 import type { ZodWeaver } from "."
-
-export interface LooseZodObject extends Pick<$ZodObject, "~standard"> {
-  _zod: Omit<
-    $ZodObject<any, any>["_zod"],
-    "def" | "parent" | "parse" | "run" | "toJSONSchema" | "processJSONSchema"
-  >
-}
 
 export interface ObjectConfig
   extends Omit<
@@ -24,7 +17,7 @@ export interface ObjectConfig
       "fields" | "name" | "interfaces"
     >,
     Partial<Pick<GraphQLObjectTypeConfig<any, any>, "fields" | "name">> {
-  interfaces?: (LooseZodObject | GraphQLInterfaceType)[]
+  interfaces?: (GraphQLSilk | GraphQLInterfaceType)[]
   [k: string]: unknown
 }
 
